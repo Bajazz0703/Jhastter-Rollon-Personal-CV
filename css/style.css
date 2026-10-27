@@ -512,7 +512,7 @@ a {
 
 .education-featured-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1.5rem;
     width: 100%;
@@ -578,6 +578,23 @@ a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.edu-meta-desc {
+    margin-top: 0.65rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.edu-meta-desc i {
+    color: var(--color-primary);
+    margin-right: 0.4rem;
+}
+
+.edu-meta-desc strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .edu-period-badge {
