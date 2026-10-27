@@ -238,12 +238,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPos = window.scrollY;
 
         // Sticky nav shadow
-        if (scrollPos > 50) {
-            navbar.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255,255,255,0.05)';
-            navbar.style.padding = '0.75rem 0';
-        } else {
-            navbar.style.boxShadow = 'none';
-            navbar.style.padding = '1.25rem 0';
+        if (navbar) {
+            if (scrollPos > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
 
         // Highlight nav links
@@ -262,6 +262,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- 4.5 Theme Toggle (Dark / Light) ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (document.body) {
+            document.body.classList.toggle('light-theme', theme === 'light');
+        }
+        if (themeToggleBtn) {
+            const icon = themeToggleBtn.querySelector('i');
+            if (icon) {
+                icon.style.transform = theme === 'light' ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
+        }
+    }
+
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(nextTheme);
+            localStorage.setItem('portfolio-theme', nextTheme);
+        });
+    }
+
+    window.toggleTheme = function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        localStorage.setItem('portfolio-theme', nextTheme);
+        return nextTheme;
+    };
 
     // --- 5. Mobile Navigation Menu ---
     const menuToggle = document.getElementById('menu-toggle');
@@ -288,40 +328,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 6. Contact Form AJAX Submission ---
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    const btnSubmit = document.getElementById('btn-submit');
+    // --- 6. Quick Toast & Email Action Helper ---
+    function showToast(message, icon = 'fa-solid fa-circle-check') {
+        let toast = document.querySelector('.contact-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.className = 'contact-toast';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<i class="${icon}"></i> <span>${message}</span>`;
+        toast.classList.add('show');
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Clear status
-            formStatus.className = 'form-status';
-            formStatus.textContent = '';
-
-            // Disable button & show loading state
-            btnSubmit.disabled = true;
-            const originalBtnText = btnSubmit.innerHTML;
-            btnSubmit.innerHTML = 'Sending... <i class="fa-solid fa-circle-notch fa-spin"></i>';
-
-            // Get data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Simulate server response for static deployment (like GitHub Pages)
-            setTimeout(() => {
-                formStatus.classList.add('success');
-                formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-                contactForm.reset();
-                btnSubmit.disabled = false;
-                btnSubmit.innerHTML = originalBtnText;
-            }, 1000);
+    const emailContactLink = document.querySelector('.email-contact-link');
+    if (emailContactLink) {
+        emailContactLink.addEventListener('click', () => {
+            const email = emailContactLink.getAttribute('data-email') || 'jhastterrollon2003@gmail.com';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(() => {
+                    showToast('Email copied to clipboard! Opening Gmail...');
+                }).catch(() => {
+                    showToast('Opening Gmail compose...');
+                });
+            } else {
+                showToast('Opening Gmail compose...');
+            }
         });
     }
 
