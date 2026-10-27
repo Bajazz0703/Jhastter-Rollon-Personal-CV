@@ -1092,8 +1092,8 @@ a {
     font-weight: 700;
     text-decoration: none;
     border-radius: 9999px;
-    box-shadow: 0 4px 22px rgba(0, 229, 255, 0.3), 0 8px 30px rgba(91, 109, 246, 0.35);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 3px 10px rgba(0, 229, 255, 0.12);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     letter-spacing: -0.01em;
     cursor: pointer;
     user-select: none;
@@ -1109,9 +1109,9 @@ a {
 
 .btn-github-pill:hover {
     color: #ffffff !important;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 32px rgba(0, 229, 255, 0.55), 0 14px 44px rgba(91, 109, 246, 0.5);
-    filter: brightness(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 229, 255, 0.22);
+    filter: brightness(1.04);
 }
 
 .btn-github-pill:hover .btn-arrow {
