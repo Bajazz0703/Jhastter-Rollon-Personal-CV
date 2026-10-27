@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhastter Rollon | Portfolio</title>
+
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description"
+        content="Portfolio of Jhastter Rollon - Engineer across AI, Web, and Cloud Systems. Discover projects, education, and skills.">
+    <meta name="keywords" content="Jhastter Rollon, Software Engineer, Full-Stack Web Development">
+    <meta name="author" content="Jhastter Rollon">
+
+    <!-- Favicon with JR Logo -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030712'/><text x='50%' y='63%' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='46' fill='%2300f0ff'>JR</text></svg>">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="intro-active">
+
+    <!-- Reload Intro / Splash Screen -->
+    <div id="intro-screen" class="intro-screen" aria-live="polite">
+        <div class="intro-content" id="intro-content">
+            <!-- Phase 1: JR Text Logo (Appears first) -->
+            <div class="intro-logo" id="intro-logo">
+                <span class="jr-letter">JR</span><span class="jr-dot">.</span>
+            </div>
+
+            <!-- Phase 2: Opening Reveal ("Jhastter Rollon Personal CV") -->
+            <div class="intro-details" id="intro-details">
+                <h1 class="intro-name">Jhastter Rollon</h1>
+                <p class="intro-subtitle">Personal CV</p>
+            </div>
+
+            <!-- Minimal Progress Indicator -->
+            <div class="intro-progress">
+                <div class="intro-progress-bar" id="intro-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="navbar-brand" id="nav-logo">Jhastter Rollon</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="navbar-nav" id="navbar-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-subtitle">Hey, I'm Jhastter</span>
+                <!-- Typing animation target -->
+                <h1 class="hero-title">
+                    <span class="typewrite" id="typing-text"
+                        data-words='["Jhastter Rollon", "UI/UX Designer", "Graphic Designer", "System Analysis", "Front-end Developer"]'></span>
+                </h1>
+                <p class="hero-desc">
+                    I design intuitive digital experiences, develop clean and responsive interfaces, and analyze systems
+                    to ensure
+                    that technology works purposefully simplifying complexity and creating real value for the people
+                    who use it.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary" id="btn-get-in-touch">
+                        Get in Touch <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="btn btn-secondary" id="btn-download-resume">
+                        Explore Portfolio <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/rollsjazz" target="_blank" class="social-icon" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rollon.jhastter@dnsc.edu.ph" target="_blank"
+                        class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-image-frame">
+                    <img src="assets/images/jhaster_profile_pic.png" alt="Jhastter Rollon" class="hero-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" id="scroll-indicator">
+            <a href="#about" aria-label="Scroll down"><i class="fa-solid fa-arrow-down scroll-indicator-icon"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-layout reveal">
+                <!-- Top Row: Profile & Career Objective Cards -->
+                <div class="about-cards-row">
+                    <!-- Profile Card -->
+                    <div class="glass about-box">
+                        <h3 class="about-box-title">Profile</h3>
+                        <p class="about-box-desc">
+                            I am an incoming 4th-year BSIT student at Davao del Norte State College with an ardent focus
+                            on human-centered digital experiences. I specialize in designing sleek user interfaces,
+                            creating memorable brand graphics, and building robust, responsive front-end systems.
+
+                            My driving philosophy is to untangle complexity: transforming intricate systems into
+                            intuitive,
+                            accessible, and visually compelling applications that create lasting value for everyone who
+                            interacts with them.
+                        </p>
+                    </div>
+
+                    <!-- Career Objective Card -->
+                    <div class="glass about-box">
+                        <h3 class="about-box-title">Career Objective</h3>
+                        <p class="about-box-desc">
+                            My goal is to design sleek, intuitive, and accessible user interfaces that make complex
+                            systems simple, combining creative UI/UX design with responsive front-end development to
+                            deliver impactful
+                            digital experiences.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: 4-Column Quick Info Bar -->
+                <div class="glass about-quick-bar">
+                    <div class="about-quick-col">
+                        <span class="quick-col-label">Location</span>
+                        <span class="quick-col-val">Panabo City, Davao del Norte</span>
+                    </div>
+                    <div class="about-quick-col">
+                        <span class="quick-col-label">Email</span>
+                        <span class="quick-col-val">jhastterrollon2003@gmail.com</span>
+                    </div>
+                    <div class="about-quick-col">
+                        <span class="quick-col-label">Phone</span>
+                        <span class="quick-col-val">09631436117</span>
+                    </div>
+                    <div class="about-quick-col">
+                        <span class="quick-col-label">Interests</span>
+                        <span class="quick-col-val">UI/UX • Web • Mobile • AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Education</h2>
+            </div>
+
+            <div class="education-grid">
+                <!-- Featured College Degree Card -->
+                <div class="glass education-featured-card reveal">
+                    <div class="education-featured-header">
+                        <div class="edu-title-group">
+                            <span class="edu-badge-pill">Current</span>
+                            <h3 class="edu-degree">Bachelor of Science in Information Technology</h3>
+                            <h4 class="edu-institution"><i class="fa-solid fa-building-columns"></i> Davao del Norte
+                                State College</h4>
+                        </div>
+                        <div class="edu-period-badge">
+                            <i class="fa-regular fa-calendar-days"></i> 2022 - 2026 / Present
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Senior High School Card -->
+                <div class="glass education-featured-card reveal">
+                    <div class="education-featured-header">
+                        <div class="edu-title-group">
+                            <span class="edu-badge-pill completed">Graduated</span>
+                            <h3 class="edu-degree">Senior High School</h3>
+                            <h4 class="edu-institution"><i class="fa-solid fa-building-columns"></i> Panabo City Senior
+                                High School</h4>
+                        </div>
+                        <div class="edu-period-badge">
+                            <i class="fa-regular fa-calendar-days"></i> 2020 - 2022
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School Card -->
+                <div class="glass education-featured-card reveal">
+                    <div class="education-featured-header">
+                        <div class="edu-title-group">
+                            <span class="edu-badge-pill completed">Graduated</span>
+                            <h3 class="edu-degree">High School</h3>
+                            <h4 class="edu-institution"><i class="fa-solid fa-building-columns"></i> Maryknoll College
+                                of Panabo Inc.</h4>
+                        </div>
+                        <div class="edu-period-badge">
+                            <i class="fa-regular fa-calendar-days"></i> 2016 - 2020
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Skills</h2>
+            </div>
+
+            <!-- Skills Category Tabs -->
+            <div class="skills-tabs reveal">
+                <button class="tab-btn active" data-category="languages">
+                    <i class="fa-solid fa-code"></i> Programming Languages
+                </button>
+                <button class="tab-btn" data-category="design">
+                    <i class="fa-solid fa-palette"></i> Graphic Design & Platforms
+                </button>
+                <button class="tab-btn" data-category="professional">
+                    <i class="fa-solid fa-briefcase"></i> Professional
+                </button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid reveal" id="skills-grid">
+                <!-- Populated dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>
